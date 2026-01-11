@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>多功能計算機與出題系統</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/mathjs@11.8.0/lib/browser/math.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>多功能計算機與出題系統</h1>
+    </header>
+
+    <main>
+      <section class="calculator">
+        <div class="display">
+          <input id="expr" placeholder="輸入表達式或方程式，例如: 2+3*4 或 2*x+3=7" />
+          <div class="result" id="result">結果顯示</div>
+        </div>
+        <div class="buttons">
+          <button data-insert="7">7</button>
+          <button data-insert="8">8</button>
+          <button data-insert="9">9</button>
+          <button data-insert="/">÷</button>
+
+          <button data-insert="4">4</button>
+          <button data-insert="5">5</button>
+          <button data-insert="6">6</button>
+          <button data-insert="*">×</button>
+
+          <button data-insert="1">1</button>
+          <button data-insert="2">2</button>
+          <button data-insert="3">3</button>
+          <button data-insert="-">−</button>
+
+          <button data-insert="0">0</button>
+          <button data-insert=".">.</button>
+          <button id="eval">=</button>
+          <button data-insert="+">+</button>
+
+          <button id="solve">求解 x</button>
+          <button id="clear">清除</button>
+          <button id="copy">複製結果</button>
+        </div>
+      </section>
+
+      <aside class="side">
+        <div class="history">
+          <h2>歷史紀錄</h2>
+          <div id="historyList"></div>
+          <div class="history-actions">
+            <button id="clearHistory">清除歷史</button>
+            <button id="exportHistory">匯出 JSON</button>
+          </div>
+        </div>
+
+        <div class="quiz">
+          <h2>出題系統</h2>
+          <label>類型:
+            <select id="qType">
+              <option value="arithmetic">四則運算</option>
+              <option value="linear">一次方程式</option>
+              <option value="quadratic">二次方程式</option>
+            </select>
+          </label>
+          <label>難度:
+            <select id="qDifficulty">
+              <option value="easy">簡單</option>
+              <option value="medium">中等</option>
+              <option value="hard">困難</option>
+            </select>
+          </label>
+          <div class="quiz-controls">
+            <button id="genQ">產生題目</button>
+            <button id="startQuiz">開始測驗</button>
+          </div>
+          <div id="questionArea" class="questionArea"></div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <small>儲存在 localStorage。支援表達式、求解單變數方程式與出題測驗。</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

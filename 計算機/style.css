@@ -1,0 +1,27 @@
+:root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#9aa4b2;--glass:rgba(255,255,255,0.03)}
+*{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans TC',sans-serif}
+body{margin:0;background:linear-gradient(180deg,#071029 0%,#071a2a 100%);color:#e6eef6}
+.container{max-width:1100px;margin:24px auto;padding:18px}
+header h1{margin:0 0 12px;font-size:20px}
+main{display:flex;gap:16px}
+.calculator{flex:1;background:var(--card);padding:12px;border-radius:8px}
+.display{display:flex;flex-direction:column;gap:8px}
+#expr{padding:10px;font-size:16px;border-radius:6px;border:1px solid #173041;background:var(--glass);color:inherit}
+.result{min-height:40px;padding:8px;border-radius:6px;background:#02121a;border:1px solid #123340;color:var(--accent);display:flex;align-items:center}
+.buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.buttons button{padding:12px;border-radius:6px;border:0;background:#123245;color:#e6eef6;cursor:pointer}
+.buttons button#eval{background:var(--accent);color:#042027}
+.buttons button#solve{grid-column:1/3;background:#3b82f6}
+.buttons button#clear{background:#ef4444}
+.buttons button#copy{background:#10b981}
+.side{width:340px;display:flex;flex-direction:column;gap:12px}
+.history,.quiz{background:var(--card);padding:12px;border-radius:8px}
+#historyList{max-height:260px;overflow:auto}
+.history .item{padding:8px;border-bottom:1px solid rgba(255,255,255,0.03);font-size:13px}
+.history-actions{display:flex;gap:8px;margin-top:8px}
+.quiz label{display:block;margin:6px 0}
+.quiz-controls{display:flex;gap:8px;margin:8px 0}
+.questionArea{min-height:80px;padding:8px;border-radius:6px;background:#02121a;border:1px solid #123340}
+footer{margin-top:12px;color:var(--muted)}
+
+@media(max-width:900px){main{flex-direction:column}.side{width:100%}}
